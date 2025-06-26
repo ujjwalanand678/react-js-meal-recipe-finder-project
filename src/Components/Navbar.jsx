@@ -10,7 +10,7 @@ const Navbar = () => {
 
   }
   return (
-    <div className="flex bg-amber-600 justify-between  text-amber-50 font-bold text-3xl p-4">
+    <div className="flex bg-amber-600 justify-between  text-amber-50 font-bold text-3xl p-4 relative z-10" >
       <div className="flex mx-5 items-center">
         <GiMeal />
         <Link to="/">
