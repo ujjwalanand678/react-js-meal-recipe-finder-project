@@ -7,12 +7,12 @@ const Search = () => {
       <div className="flex-col relative bottom-90">
         <form className="flex place-content-center mb-5 ">
           <input
-            className="bg-gray-200 rounded-full p-3 px-6 me-3 outline-none"
+            className="bg-gray-100 rounded-full p-3 px-6 me-3 outline-none"
             type="search"
             placeholder="Search"
           />
           <button
-            className=" bg-gray-200 rounded-full p-3 px-4 text-amber-600 text-lg cursor-pointer"
+            className=" bg-gray-100 rounded-full p-3 px-4 text-amber-600 text-lg cursor-pointer"
             type="submit"
           >
             <IoSearchSharp />
