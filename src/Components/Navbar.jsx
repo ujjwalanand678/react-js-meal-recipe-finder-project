@@ -1,0 +1,29 @@
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { GiMeal } from "react-icons/gi";
+import { Link } from "react-router-dom";
+import ToggleMenu from "./ToggleMenu";
+
+const Navbar = () => {
+  const openMenu =()=>{
+
+  }
+  return (
+    <div className="flex bg-amber-600 justify-between  text-amber-50 font-bold text-3xl p-4">
+      <div className="flex mx-5 items-center">
+        <GiMeal />
+        <Link to="/">
+          <h2 className="ps-2">MEAL FINDER</h2>
+        </Link>
+      </div>
+      <div className="mx-5 items-center" onClick={openMenu}>
+        <GiHamburgerMenu />
+         {/* <ToggleMenu/> */}
+      </div>
+     
+    </div>
+  );
+};
+
+export default Navbar;
