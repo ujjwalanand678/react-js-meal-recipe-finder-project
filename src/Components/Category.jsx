@@ -22,10 +22,8 @@ const Category = () => {
         {card.length > 0 ? (
           card.map((item) => (
             <>
-              <Link>
-                <div
-                  key={item.idCategory}
-                  className="m-1 bg-white rounded-md ">
+              <Link key={item.idCategory}>
+                <div className="m-1 bg-white rounded-md ">
                   <p className="bg-amber-600 px-2 text-white rounded justify-self-end relative top-2 right-2 z-10">
                     {item.strCategory}
                   </p>
