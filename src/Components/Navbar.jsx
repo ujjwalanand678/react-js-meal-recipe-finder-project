@@ -19,7 +19,7 @@ const Navbar = () => {
       </div>
       <div className="mx-5 items-center" onClick={openMenu}>
         <GiHamburgerMenu />
-         {/* <ToggleMenu/> */}
+         <ToggleMenu/>
       </div>
      
     </div>
