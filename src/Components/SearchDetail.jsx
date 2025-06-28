@@ -16,7 +16,7 @@ const SearchDetail = ({ foodName }) => {
     console.log(data.meals);
   };
   return (
-    <div className="relative bottom-30 ">
+    <div className="relative bottom-35 ">
       {mealsName.length > 0 ? (
         <>
           <h1 className="font-bold mx-7">MEALS</h1>
@@ -24,7 +24,7 @@ const SearchDetail = ({ foodName }) => {
         </>
       ) : null}
 
-      <div className="grid grid-cols-5 gap-4 m-7">
+      <div className="grid grid-cols-5 gap-4 m-7 mb-10">
         {mealsName.length > 0
           ? mealsName.map((food) => (
               <div
@@ -50,6 +50,7 @@ const SearchDetail = ({ foodName }) => {
           : null}
       </div>
     </div>
+    
   );
 };
 

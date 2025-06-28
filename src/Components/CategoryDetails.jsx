@@ -38,7 +38,8 @@ const CategoryDetails = () => {
       <Banner />
       <Search setFoodName={setFoodName} />
       <SearchDetail foodName={foodName} />
-      <div className="relative bottom-50 mx-10">
+      
+      <div className="relative bottom-40 mx-10">
         {cardDetails && (
           <div className="border-2 border-amber-600 p-7">
             <p className="text-amber-600 font-bold text-3xl mb-2">
@@ -50,7 +51,7 @@ const CategoryDetails = () => {
           </div>
         )}
       </div>
-      <div className="relative bottom-40 mx-3">
+      <div className="relative bottom-30 mx-3">
         <p className="font-bold mx-7 text-xl ">MEALS</p>
         <hr className="text-amber-600 w-10 border-2 mx-7" />
         <div className="grid grid-cols-5 mt-10 mx-4">
