@@ -16,12 +16,14 @@ const CategoryDetails = () => {
       "https://www.themealdb.com/api/json/v1/1/categories.php"
     );
     setCard(data.categories);
-    console.log(data.categories);
+    
   };
+
   useEffect(() => {
     getCardData();
     getCategoryData();
   }, [strCategory]);
+
   const getCategoryData = async () => {
     const { data } = await axios(
       `https://www.themealdb.com/api/json/v1/1/filter.php?c=${strCategory}`
@@ -29,6 +31,7 @@ const CategoryDetails = () => {
     setMealCategory(data.meals);
     console.log(data.meals);
   };
+
   const cardDetails = card.find((cat) => cat.strCategory === strCategory);
   return (
     <>
