@@ -16,26 +16,26 @@ const SearchDetail = ({ foodName }) => {
     console.log(data.meals);
   };
   return (
-    <div>
+    <div className="relative bottom-30 " >
       <h1 className="font-bold mx-7">MEALS</h1>
       <hr className="text-amber-600 w-10 border-2 mx-7" />
 
-      <div className="grid grid-cols-4 gap-4 m-7">
+      <div className="grid grid-cols-5 gap-4 m-7">
         {mealsName.length > 0 ? (
           mealsName.map((food) => (
             <>
-              <Link key={food.idMeal}>
-                <div  className="m-1 bg-white rounded-md ">
-                  <p className="bg-amber-600 px-2 text-white rounded justify-self-end relative top-2 right-2 z-10">
-                    {food.strMeal}
-                  </p>
-                  <img
-                    src={food.strMealThumb}
-                    alt={food.strMeal}
-                    className="w-full flex px-3.5 pb-2 hover:scale-110"
-                  />
-                </div>
-              </Link>
+              <div className="m-1 bg-white rounded-md shadow-lg" key={food.idMeal}>
+                <p className="text-amber-600 px-3 bg-white rounded-full justify-self-end relative top-3 right-3 z-10">
+                  {food.strCategory}
+                </p>
+                <img
+                  src={food.strMealThumb}
+                  alt={food.strMeal}
+                  className="w-full flex relative bottom-6 rounded-t-md"
+                />
+                <p className="relative bottom-5 px-3 text-gray-500">{food.strArea}</p>
+                <p className="relative bottom-5 px-3 font-bold" >{food.strMeal}</p>
+              </div>
             </>
           ))
         ) : (

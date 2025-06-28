@@ -9,8 +9,8 @@ const Home = () => {
   return (
     <>
       <Banner />
-      <Search food={setFoodName} />
-      <SearchDetail food={foodName} />
+      <Search setFoodName={setFoodName} />
+      <SearchDetail foodName={foodName} />
       <Category />
     </>
   );
