@@ -39,7 +39,7 @@ const SearchDetail = ({ foodName }) => {
             </>
           ))
         ) : (
-          <h2>Food Not Found</h2>
+          <p></p>
         )}
       </div>
     </div>
