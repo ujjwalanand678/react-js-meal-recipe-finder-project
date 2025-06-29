@@ -10,10 +10,8 @@ const Routing = () => {
     <>
     <Routes>
         <Route path="/"  element={<Home />}/>
-        <Route path="/mealCategory/:strCategory" element={<CategoryDetails/>}>
-        <Route path="mealDetail/:idMeal" element={<MealDetails/>} />
-        </Route>
-        
+        <Route path="/mealCategory/:strCategory" element={<CategoryDetails/>}/>
+        <Route path="/mealCategory/:strCategory/mealDetail/:idMeal" element={<MealDetails/>} />
     </Routes>
     </>
   )

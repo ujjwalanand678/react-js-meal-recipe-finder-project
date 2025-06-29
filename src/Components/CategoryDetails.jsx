@@ -60,7 +60,7 @@ const CategoryDetails = () => {
                 className=" m-3 mb-10 bg-white rounded-md shadow-lg"
                 key={meal.idMeal}
               >
-                <Link to={`mealDetail/${meal.idMeal}`}>
+                <Link to={`/mealCategory/${strCategory}/mealDetail/${meal.idMeal}`}>
                   <img
                     src={meal.strMealThumb}
                     alt={meal.strMeal}
@@ -77,7 +77,7 @@ const CategoryDetails = () => {
           )}
         </div>
       </div>
-      <Outlet />
+      {/* <Outlet /> */}
     </>
   );
 };

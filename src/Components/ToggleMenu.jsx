@@ -33,7 +33,7 @@ const ToggleMenu = ({ isOpen, closeMenu }) => {
           className="text-amber-600 text-2xl relative bottom-10 left-43 cursor-pointer"
         />
         {menu.map((name) => (
-          <ul>
+          <ul key={name.idCategory}>
             <Link to={`mealCategory/${name.strCategory}`} onClick={closeMenu}>
               <li>{name.strCategory}</li>
               <hr className="w-[90%] mb-3 text-gray-300" />
