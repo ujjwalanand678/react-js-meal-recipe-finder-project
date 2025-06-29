@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const SearchDetail = ({ foodName }) => {
   const [mealsName, setMealsName] = useState([]);
@@ -14,7 +14,7 @@ const SearchDetail = ({ foodName }) => {
       `https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}`
     );
     setMealsName(data.meals || []);
-    console.log(data.meals);
+    
   };
   return (
     <div className="relative bottom-35 ">
@@ -32,7 +32,7 @@ const SearchDetail = ({ foodName }) => {
                 className="m-1 bg-white rounded-md shadow-lg"
                 key={food.idMeal}
               >
-                <Link  to={`mealDetail/${meal.idMeal}`}>
+                <Link  to={`mealDetail/${food.idMeal}`}>
                  <p className="text-amber-600 px-3 bg-white rounded-full justify-self-end relative top-3 right-3 z-10">
                   {food.strCategory}
                 </p>
@@ -52,6 +52,7 @@ const SearchDetail = ({ foodName }) => {
               </div>
             ))
           : null}
+          <Outlet />
       </div>
     </div>
     

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import Search from "./Search";
 import Banner from "./Banner";
 import SearchDetail from "./SearchDetail";
@@ -28,7 +28,7 @@ const CategoryDetails = () => {
       `https://www.themealdb.com/api/json/v1/1/filter.php?c=${strCategory}`
     );
     setMealCategory(data.meals);
-    console.log(data.meals);
+  
   };
 
   const cardDetails = card.find((cat) => cat.strCategory === strCategory);
@@ -77,6 +77,7 @@ const CategoryDetails = () => {
           )}
         </div>
       </div>
+      <Outlet />
     </>
   );
 };
