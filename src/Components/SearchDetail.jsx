@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const SearchDetail = ({ foodName }) => {
   const [mealsName, setMealsName] = useState([]);
@@ -31,7 +32,8 @@ const SearchDetail = ({ foodName }) => {
                 className="m-1 bg-white rounded-md shadow-lg"
                 key={food.idMeal}
               >
-                <p className="text-amber-600 px-3 bg-white rounded-full justify-self-end relative top-3 right-3 z-10">
+                <Link  to={`mealDetail/${meal.idMeal}`}>
+                 <p className="text-amber-600 px-3 bg-white rounded-full justify-self-end relative top-3 right-3 z-10">
                   {food.strCategory}
                 </p>
                 <img
@@ -45,6 +47,8 @@ const SearchDetail = ({ foodName }) => {
                 <p className="relative bottom-5 px-3 font-bold">
                   {food.strMeal}
                 </p>
+                </Link>
+               
               </div>
             ))
           : null}

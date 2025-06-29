@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Search from "./Search";
 import Banner from "./Banner";
 import SearchDetail from "./SearchDetail";
@@ -16,7 +16,6 @@ const CategoryDetails = () => {
       "https://www.themealdb.com/api/json/v1/1/categories.php"
     );
     setCard(data.categories);
-    
   };
 
   useEffect(() => {
@@ -38,7 +37,7 @@ const CategoryDetails = () => {
       <Banner />
       <Search setFoodName={setFoodName} />
       <SearchDetail foodName={foodName} />
-      
+
       <div className="relative bottom-40 mx-10">
         {cardDetails && (
           <div className="border-2 border-amber-600 p-7">
@@ -61,14 +60,16 @@ const CategoryDetails = () => {
                 className=" m-3 mb-10 bg-white rounded-md shadow-lg"
                 key={meal.idMeal}
               >
-                <img
-                  src={meal.strMealThumb}
-                  alt={meal.strMeal}
-                  className="w-full flex relative bottom-6 rounded-t-md"
-                />
-                <p className="relative bottom-5 px-3 font-bold">
-                  {meal.strMeal}
-                </p>
+                <Link to={`mealDetail/${meal.idMeal}`}>
+                  <img
+                    src={meal.strMealThumb}
+                    alt={meal.strMeal}
+                    className="w-full flex relative bottom-6 rounded-t-md"
+                  />
+                  <p className="relative bottom-5 px-3 font-bold">
+                    {meal.strMeal}
+                  </p>
+                </Link>
               </div>
             ))
           ) : (
