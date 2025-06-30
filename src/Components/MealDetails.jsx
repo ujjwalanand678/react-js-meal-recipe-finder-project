@@ -5,6 +5,8 @@ import Search from "./Search";
 import Banner from "./Banner";
 import SearchDetail from "./SearchDetail";
 import Category from "./Category";
+import { FaUtensilSpoon } from "react-icons/fa";
+import { AiOutlineCheckSquare } from "react-icons/ai";
 
 const MealDetails = () => {
   const [foodName, setFoodName] = useState("");
@@ -23,7 +25,31 @@ const MealDetails = () => {
     }
     console.log(data.meals);
   };
-  
+
+  const ingredientList = [];
+  if (mealRecipe) {
+    for (let i = 1; i <= 20; i++) {
+      const ingredient = mealRecipe[`strIngredient${i}`];
+      if (ingredient && ingredient.trim() !== "") {
+        ingredientList.push(ingredient.trim());
+      }
+    }
+  }
+  const measureList = [];
+  if (mealRecipe) {
+    for (let i = 1; i <= 20; i++) {
+      const measure = mealRecipe[`strMeasure${i}`];
+      if (measure && measure.trim() !== "") {
+        measureList.push(measure.trim());
+      }
+    }
+  }
+
+  let instructions = [];
+  if (mealRecipe) {
+    instructions = mealRecipe.strInstructions.split(/\r?\n/);
+  }
+
   return (
     <>
       <Banner />
@@ -36,29 +62,78 @@ const MealDetails = () => {
         </div>
         {mealRecipe ? (
           <div className="bg-white mx-3 shadow-lg" key={mealRecipe.idMeal}>
-            <div className="flex">
-              <div>
+            <div className="grid grid-cols-2 ">
+              <div className="w-full h-full overflow-hidden">
                 <img
                   src={mealRecipe.strMealThumb}
                   alt={mealRecipe.strMeal}
-                  className="w-[50%] ms-10 mt-10"
+                  className="w-[90%] h-full  object-cover ms-10 mt-10"
                 />
               </div>
-              <div>
-                <h2>{mealRecipe.strMeal}</h2>
-                <hr />
-                <p>CATEGORY : {mealRecipe.strCategory}</p>
-                <p>Source :{mealRecipe.strSource}</p>
-                <p>Tags : {mealRecipe.strCategory}</p>
-                <div>
-                  <p>Ingredients</p>
+              <div className=" items-center mx-7 mt-9 m">
+                <p className="text-amber-600 text-2xl font-bold mb-3">
+                  {mealRecipe.strMeal}
+                </p>
+                <hr className="text-amber-600 border" />
 
+                <div className="flex items-center mt-4">
+                  <p className="text-lg font-bold">CATEGORY:</p>
+                  <p className="ms-1">{mealRecipe.strCategory}</p>
                 </div>
-                
+                <div className="flex items-center mt-4">
+                  <p className="text-lg font-bold">Source: </p>
+                  <p className="ms-1"> {mealRecipe.strSource}</p>
+                </div>
+                <div className="flex items-center mt-4">
+                  <p className="text-lg font-bold">Tags: </p>
+                  <p className="border p-1 px-2  text-amber-600 ms-1">
+                    {" "}
+                    {mealRecipe.strCategory}
+                  </p>
+                </div>
+                {/* ingredient list */}
+                <div className="bg-orange-500 text-white ps-7 pt-4 mt-4">
+                  <p className="text-lg font-bold pb-3">Ingredients</p>
+                  <div className="grid grid-cols-3 pb-4">
+                    {ingredientList.map((item, index) => (
+                      <div className="flex items-center pb-2 ">
+                        <li className="list-none border-1  bg-teal-700 px-1.5 p-0 m-1 rounded-full">
+                          {index + 1}
+                        </li>
+                        <li className="list-none" key={index}>
+                          {item}
+                        </li>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-            <div>
-
+            {/* measure */}
+            <div className="ms-10 me-7 mt-10">
+              <p className="text-xl font-bold mb-4">Measure:</p>
+              <div className="border border-gray-400 grid grid-cols-2 bg-gray-100 p-7">
+                {measureList.map((item, index) => (
+                  <li className="list-none flex items-center mb-2" key={index}>
+                    <FaUtensilSpoon className="text-amber-600 me-2" /> {item}
+                  </li>
+                ))}
+              </div>
+            </div>
+            {/* instructions */}
+            <div className="ms-10 me-7 mt-10 pb-15">
+              <p className="text-xl font-bold mb-4">Instructions:</p>
+              <ul className="list-none space-y-2">
+                {instructions.map(
+                  (step, index) =>
+                    step.trim() && (
+                      <li key={index} className="flex items-start gap-2">
+                        <AiOutlineCheckSquare className="text-amber-600" />
+                        <p>{step}</p>
+                      </li>
+                    )
+                )}
+              </ul>
             </div>
           </div>
         ) : (
