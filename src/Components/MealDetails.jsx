@@ -115,7 +115,7 @@ const MealDetails = () => {
               <div className="border border-gray-400 grid grid-cols-2 bg-gray-100 p-7">
                 {measureList.map((item, index) => (
                   <li className="list-none flex items-center mb-2" key={index}>
-                    <FaUtensilSpoon className="text-amber-600 me-2" /> {item}
+                    <FaUtensilSpoon className="text-amber-600 me-2 shrink-0" /> {item}
                   </li>
                 ))}
               </div>
