@@ -23,7 +23,7 @@ const MealDetails = () => {
     if (data.meals && data.meals.length > 0) {
       setMealRecipe(data.meals[0]); // Store single meal
     }
-    console.log(data.meals);
+   
   };
 
   const ingredientList = [];
@@ -96,7 +96,7 @@ const MealDetails = () => {
                   <p className="text-lg font-bold pb-3">Ingredients</p>
                   <div className="grid grid-cols-3 pb-4">
                     {ingredientList.map((item, index) => (
-                      <div className="flex items-center pb-2 ">
+                      <div className="flex items-center pb-2 " key={index}>
                         <li className="list-none border-1  bg-teal-700 px-1.5 p-0 m-1 rounded-full">
                           {index + 1}
                         </li>
@@ -127,9 +127,9 @@ const MealDetails = () => {
                 {instructions.map(
                   (step, index) =>
                     step.trim() && (
-                      <li key={index} className="flex items-start gap-2">
-                        <AiOutlineCheckSquare className="text-amber-600" />
-                        <p>{step}</p>
+                      <li key={index} className="flex items-start gap-3  ">
+                        <AiOutlineCheckSquare className="text-amber-600 text-xl flex-shrink-0 mt-1 " />
+                        <p className="leading-relaxed">{step}</p>
                       </li>
                     )
                 )}
