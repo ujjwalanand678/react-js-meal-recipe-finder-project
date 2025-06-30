@@ -92,7 +92,7 @@ const MealDetails = () => {
                   </p>
                 </div>
                 {/* ingredient list */}
-                <div className="bg-orange-500 text-white ps-7 pt-4 mt-4">
+                <div className="bg-amber-600 text-white ps-7 pt-4 mt-4">
                   <p className="text-lg font-bold pb-3">Ingredients</p>
                   <div className="grid lg:grid-cols-3 pb-4">
                     {ingredientList.map((item, index) => (
