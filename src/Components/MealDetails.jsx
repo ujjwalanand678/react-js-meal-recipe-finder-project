@@ -62,12 +62,12 @@ const MealDetails = () => {
         </div>
         {mealRecipe ? (
           <div className="bg-white mx-3 shadow-lg" key={mealRecipe.idMeal}>
-            <div className="grid grid-cols-2 ">
-              <div className="w-full h-full overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2 ">
+              <div className=" lg:w-full lg:h-full lg:overflow-hidden">
                 <img
                   src={mealRecipe.strMealThumb}
                   alt={mealRecipe.strMeal}
-                  className="w-[90%] h-full  object-cover ms-10 mt-10"
+                  className="w-[80%] lg:w-[90%] h-auto  lg:object-cover ms-10 mt-10"
                 />
               </div>
               <div className=" items-center mx-7 mt-9 m">
@@ -82,7 +82,7 @@ const MealDetails = () => {
                 </div>
                 <div className="flex items-center mt-4">
                   <p className="text-lg font-bold">Source: </p>
-                  <p className="ms-1"> {mealRecipe.strSource}</p>
+                  <p className="ms-1 overflow-hidden"> {mealRecipe.strSource}</p>
                 </div>
                 <div className="flex items-center mt-4">
                   <p className="text-lg font-bold">Tags: </p>
@@ -94,7 +94,7 @@ const MealDetails = () => {
                 {/* ingredient list */}
                 <div className="bg-orange-500 text-white ps-7 pt-4 mt-4">
                   <p className="text-lg font-bold pb-3">Ingredients</p>
-                  <div className="grid grid-cols-3 pb-4">
+                  <div className="grid lg:grid-cols-3 pb-4">
                     {ingredientList.map((item, index) => (
                       <div className="flex items-center pb-2 " key={index}>
                         <li className="list-none border-1  bg-teal-700 px-1.5 p-0 m-1 rounded-full">

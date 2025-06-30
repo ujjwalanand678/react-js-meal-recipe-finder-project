@@ -18,7 +18,7 @@ const Category = () => {
       <h1 className="font-bold mx-7">CATEGORIES</h1>
       <hr className="text-amber-600 w-12 border-2 mx-7" />
 
-      <div className="grid grid-cols-4 gap-4 m-7">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 m-7">
         {card.length > 0 ? (
           card.map((item) => (
             <React.Fragment key={item.idCategory}>

@@ -53,7 +53,7 @@ const CategoryDetails = () => {
       <div className="relative bottom-30 mx-3">
         <p className="font-bold mx-7 text-xl ">MEALS</p>
         <hr className="text-amber-600 w-10 border-2 mx-7" />
-        <div className="grid grid-cols-5 mt-10 mx-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 mt-10 mx-4">
           {mealCategory && Object.keys(mealCategory).length > 0 ? (
             mealCategory.map((meal) => (
               <div

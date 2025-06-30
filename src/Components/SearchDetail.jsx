@@ -25,7 +25,7 @@ const SearchDetail = ({ foodName }) => {
         </>
       ) : null}
 
-      <div className="grid grid-cols-5 gap-4 m-7 mb-10">
+      <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 m-7 mb-10">
         {mealsName.length > 0
           ? mealsName.map((food) => (
               <div

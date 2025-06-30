@@ -16,7 +16,7 @@ const closeMenu = () => setIsOpen(false);
     setIsOpen(false);
   };
   return (
-    <div className="flex bg-amber-600 justify-between  text-amber-50 font-bold text-3xl p-4 relative z-10">
+    <div className="flex bg-amber-600 justify-between md:text-2xl text-amber-50 font-bold lg:text-3xl p-4 relative z-10">
       <div className="flex mx-5 items-center">
         <GiMeal />
         <Link to="/">
