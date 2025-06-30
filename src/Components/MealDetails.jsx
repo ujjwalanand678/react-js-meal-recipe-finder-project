@@ -67,7 +67,7 @@ const MealDetails = () => {
                 <img
                   src={mealRecipe.strMealThumb}
                   alt={mealRecipe.strMeal}
-                  className="w-[80%] lg:w-[90%] h-auto  lg:object-cover ms-10 mt-10"
+                  className="w-[80%] lg:w-[90%] h-auto  lg:object-cover ms-9 mt-10 lg:ms-10 lg:mt-10"
                 />
               </div>
               <div className=" items-center mx-7 mt-9 m">
